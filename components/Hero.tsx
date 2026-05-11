@@ -55,8 +55,8 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl text-center md:text-left"
           >
-            {/* Mobilde text-3xl, Masaüstünde text-7xl */}
-            <h1 className="text-white text-3xl sm:text-4xl md:text-7xl font-black tracking-tighter leading-tight uppercase">
+            {/* Mobilde text-3xl, Tablette text-5xl, Masaüstünde text-7xl */}
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter leading-tight uppercase">
               {slides[index].title} <br className="hidden md:block" />
               <span className="text-cyan-400">{slides[index].highlight}</span>
             </h1>

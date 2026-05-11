@@ -34,7 +34,7 @@ const About = () => {
   return (
     <section id="hakkimizda" className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
           
           {/* SOL TARAF: Yazı Alanı (Sola Süzülme Animasyonu) */}
           <motion.div 
@@ -42,7 +42,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="md:w-1/2"
+            className="lg:w-1/2"
           >
             <h2 className="text-sm font-bold text-cyan-500 tracking-widest uppercase mb-2">Hakkımızda</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
@@ -83,10 +83,10 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="md:w-1/2 grid grid-cols-2 gap-6"
+            className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
           >
             {/* Kutu 1 - Puan */}
-            <div className="bg-cyan-50 p-8 rounded-2xl text-center hover:bg-white hover:shadow-xl transition border border-cyan-100 group">
+            <div className="bg-cyan-50 p-6 sm:p-8 rounded-2xl text-center hover:bg-white hover:shadow-xl transition border border-cyan-100 group">
               <div className="text-4xl font-bold text-cyan-600 mb-2">
                 <Counter from={0} to={5} suffix="/5" />
               </div>
@@ -94,7 +94,7 @@ const About = () => {
             </div>
 
             {/* Kutu 2 - Yönetilen Site */}
-            <div className="bg-cyan-50 p-8 rounded-2xl text-center hover:bg-white hover:shadow-xl transition border border-cyan-100">
+            <div className="bg-cyan-50 p-6 sm:p-8 rounded-2xl text-center hover:bg-white hover:shadow-xl transition border border-cyan-100">
               <div className="text-4xl font-bold text-cyan-600 mb-2">
                 <Counter from={0} to={10} suffix="+" />
               </div>
@@ -102,7 +102,7 @@ const About = () => {
             </div>
 
             {/* Kutu 3 - Mutlu Sakin */}
-            <div className="bg-gray-50 p-8 rounded-2xl text-center hover:bg-white hover:shadow-xl transition border border-gray-100">
+            <div className="bg-gray-50 p-6 sm:p-8 rounded-2xl text-center hover:bg-white hover:shadow-xl transition border border-gray-100">
               <div className="text-4xl font-bold text-gray-800 mb-2">
                 <Counter from={0} to={900} suffix="+" />
               </div>
@@ -110,7 +110,7 @@ const About = () => {
             </div>
 
             {/* Kutu 4 - Müşteri Memnuniyeti */}
-            <div className="bg-blue-900 p-8 rounded-2xl text-center hover:shadow-xl transition transform hover:-translate-y-2">
+            <div className="bg-blue-900 p-6 sm:p-8 rounded-2xl text-center hover:shadow-xl transition transform hover:-translate-y-2">
               <div className="text-4xl font-bold text-white mb-2">
                 <Counter from={0} to={100} suffix="%" />
               </div>
