@@ -5,17 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 // --- NAVİGASYON LİNKLERİ ---
 // Tek kaynak olarak burada tanımlandı → Kural 4 (Bileşen izolasyonu, modüler yapı)
-const NAV_LINKS = [
-  { label: "ANA SAYFA", href: "/" },
-  { label: "HAKKIMIZDA", href: "/#hakkimizda" },
-  { label: "HİZMETLERİMİZ", href: "/#hizmetler" },
-  { label: "REFERANSLAR", href: "/#referanslar" },
-  { label: "İLETİŞİM", href: "/iletisim" },
-  { label: "KVKK", href: "/kvkk" },
-];
+// We will generate the links dynamically inside the component using translations.
 
 // --- SVG İKONLARI (harici kütüphane bağımlılığı olmadan) ---
 // Kural 1: Hamburger ve X saf SVG; react-icons opsiyonel ek olarak kullanılabilir
@@ -50,6 +45,15 @@ const IconClose = () => (
 );
 
 export default function Header() {
+  const t = useTranslations("header");
+  const NAV_LINKS = [
+    { label: t("home"), href: "/" },
+    { label: t("about"), href: "/#hakkimizda" },
+    { label: t("services"), href: "/#hizmetler" },
+    { label: t("references"), href: "/#referanslar" },
+    { label: t("contact"), href: "/iletisim" },
+    { label: t("kvkk"), href: "/kvkk" },
+  ];
   // Kural 1: useState ile mobil menü aç/kapa durumu yönetilir
   const [isOpen, setIsOpen] = useState(false);
   // Scroll sonrası navbar'ın gölge alması için
@@ -104,9 +108,9 @@ export default function Header() {
       {/* --- ANA BANT ---
           w-full max-w-7xl mx-auto px-4 → Kural 2: sabit px yok, esnek kapsayıcı
           py-3 → dikey nefes alanı                                               */}
-      <div className="w-full max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 xl:grid-cols-12 items-center">
+      <div className="w-full max-w-[1400px] mx-auto px-4 py-3 flex justify-between items-center gap-2">
         {/* LOGO */}
-        <div className="col-span-1 xl:col-span-3 flex justify-start">
+        <div className="flex justify-start flex-shrink-0">
           <Link
             href="/"
             onClick={(e) => handleNav(e, "/")}
@@ -118,31 +122,28 @@ export default function Header() {
               alt="Üçüzler Bina Yönetimi logosu"
               width={44}
               height={44}
-              // priority: LCP (en büyük içerikli boyama) öğesi; hızlı yükleme için
               priority
               className="rounded-full bg-white p-0.5 object-cover shadow-md"
             />
             <div className="flex flex-col leading-none">
-              {/* text-base md:text-lg → Kural 4: rem tabanlı responsive tipografi */}
               <span className="font-black text-base md:text-lg uppercase tracking-tighter">
                 ÜÇÜZLER
               </span>
               <span className="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">
-                Bina Yönetimi
+                {t("subTitle")}
               </span>
             </div>
           </Link>
         </div>
 
-        {/* DESKTOP MENÜ (xl: ve üzeri) → hidden mobilde ve tablette, flex masaüstünde */}
-        <nav className="hidden xl:flex xl:col-span-6 justify-center items-center gap-4 xl:gap-8" aria-label="Ana menü">
+        {/* DESKTOP MENÜ (xl: ve üzeri) */}
+        <nav className="hidden xl:flex justify-center items-center gap-3 xl:gap-5 flex-1 mx-4" aria-label="Ana menü">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={(e) => handleNav(e, link.href)}
-              // py-2 px-1 → Kural 2: min 44px dokunmatik alan (py-2 = 8px + satır yüksekliği ≥ 44px)
-              className="py-2 px-1 text-xs font-bold uppercase tracking-widest hover:text-cyan-400 transition-colors whitespace-nowrap"
+              className="py-2 px-1 text-[11px] xl:text-xs font-bold uppercase tracking-widest hover:text-cyan-400 transition-colors whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -150,7 +151,7 @@ export default function Header() {
         </nav>
 
         {/* SAĞ TARAF: TEMA BUTONU, CTA veya MOBİL HAMBURGER BUTONU */}
-        <div className="col-span-1 xl:col-span-3 flex justify-end items-center gap-2">
+        <div className="flex justify-end items-center gap-2 flex-shrink-0">
           {mounted && (
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -160,6 +161,10 @@ export default function Header() {
               {theme === 'dark' ? <FaSun size={16} /> : <FaMoon size={16} />}
             </button>
           )}
+          {/* Dil seçici */}
+          <div className="inline-flex ml-1 md:ml-2">
+            <LanguageSwitcher />
+          </div>
           <Link
             href="/iletisim"
             className="
@@ -170,7 +175,7 @@ export default function Header() {
               active:scale-95 transition-all duration-200
             "
           >
-            TEKLİF AL
+            {t("getQuote")}
           </Link>
           {/* p-3 → Kural 2 (Erişilebilirlik): minimum 44×44px dokunmatik alan */}
           <button
@@ -247,14 +252,14 @@ export default function Header() {
               transition-all shadow-xl shadow-cyan-500/20
             "
           >
-            ÜCRETSİZ TEKLİF AL
+            {t("freeQuote")}
           </Link>
         </nav>
 
         {/* Alt sosyal medya bölümü */}
         <div className="px-6 py-8 border-t border-white/10">
           <p className="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-4">
-            Bize Ulaşın
+            {t("contactUs")}
           </p>
           <div className="flex gap-4">
             {/* p-3 → Kural 2: her ikon butonu minimum 44×44px */}

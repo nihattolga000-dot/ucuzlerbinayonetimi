@@ -1,0 +1,96 @@
+{
+  "siteName": "Ucuzler Gebäudemanagement",
+  "header": {
+    "home": "STARTSEITE",
+    "about": "ÜBER UNS",
+    "services": "LEISTUNGEN",
+    "references": "REFERENZEN",
+    "contact": "KONTAKT",
+    "kvkk": "DATENSCHUTZ",
+    "getQuote": "ANGEBOT EINHOLEN",
+    "freeQuote": "KOSTENLOSES ANGEBOT",
+    "contactUs": "Kontaktiere uns",
+    "subTitle": "Gebäudemanagement"
+  },
+  "hero": {
+    "slide1": {
+      "title": "KAYSERIS ZUVERLÄSSIGSTES",
+      "highlight": "GEBÄUDEMANAGEMENT",
+      "desc": "Erleben Sie transparentes, digitales und professionelles Management."
+    },
+    "slide2": {
+      "title": "MEHRWERT FÜR",
+      "highlight": "IHRE WOHNRÄUME",
+      "desc": "Sicherung des nachbarschaftlichen Friedens mit technologieorientierten Lösungen."
+    },
+    "freeQuote": "KOSTENLOSES ANGEBOT",
+    "services": "UNSERE LEISTUNGEN"
+  },
+  "about": {
+    "subtitle": "Über uns",
+    "title1": "Professionelle Note im",
+    "title2": "Gebäudemanagement",
+    "desc": "Als Ucuzler Gebäudemanagement verbinden wir Technologie und Transparenz, um Frieden und Ordnung in Ihren Wohnräumen zu gewährleisten. Wir verwalten rechtliche und finanzielle Prozesse mit unserem Fachpersonal und überlassen Ihnen nur den Wohnkomfort.",
+    "list1": "24/7 Technischer Support & Notfalleinsatz",
+    "list2": "Transparente Buchhaltung & Online-Tracking",
+    "list3": "Rechtliche Beratung",
+    "stats": {
+      "score": "Punktzahl",
+      "managed": "Verwaltete Anlagen",
+      "happy": "Zufriedene Bewohner",
+      "satisfaction": "Zufriedenheit"
+    }
+  },
+  "footer": {
+    "desc": "Transparentes, zuverlässiges Gebäudemanagement in Kayseri. Kein Poolsystem, das Geld jeder Anlage auf einem eigenen Konto.",
+    "quickLinks": "Schnellzugriff",
+    "corporate": "Unternehmen",
+    "social": "Soziale Medien",
+    "socialDesc": "Folgen Sie uns für Neuigkeiten.",
+    "freeDiscovery": "Kostenlose Besichtigung",
+    "freeDiscoveryDesc": "Wir prüfen Ihr Gebäude kostenlos und erstellen ein individuelles Angebot.",
+    "getQuoteBtn": "Angebot einholen →",
+    "rights": "ALLE RECHTE VORBEHALTEN",
+    "slogan": "Professionelles Management · Sichere Zukunft · Kayseri",
+    "devCredit": "Entwickelt von NG Web Yazılım."
+  },
+  "contact": {
+    "title": "KONTAKTZENTRUM",
+    "subtitle": "Treten Sie mit uns in Kontakt",
+    "info": "UNSERE INFOS",
+    "address": "Adresse",
+    "addressValue": "Sahabiye Mah. Ahmet Pasa Cad. Kalender Is Merkezi No:41 Floor:6 Kocasinan / KAYSERI",
+    "phone": "Telefon & WhatsApp",
+    "hours": "Arbeitszeiten",
+    "hoursValue": "Montag - Samstag 09:00 - 18:00",
+    "formTitle": "Wie können wir Ihnen helfen?",
+    "name": "Vor- und Nachname",
+    "namePlace": "Ihr Name & Nachname",
+    "phoneLabel": "Telefon",
+    "phonePlace": "Telefonnummer",
+    "email": "E-Mail",
+    "emailPlace": "beispiel@mail.com",
+    "subject": "Betreff",
+    "subjectOpt1": "Ich möchte ein Management-Angebot erhalten",
+    "subjectOpt2": "Beschwerde / Vorschlag",
+    "subjectOpt3": "Andere",
+    "message": "Nachricht",
+    "messagePlace": "Schreiben Sie hier Ihre Nachricht...",
+    "submit": "Nachricht senden",
+    "sending": "Senden...",
+    "successTitle": "Großartig!",
+    "successDesc": "Ihre Nachricht wurde erfolgreich gesendet, vielen Dank.",
+    "errorTitle": "Fehler aufgetreten",
+    "errorDesc": "Bitte überprüfen Sie Ihre Internetverbindung."
+  },
+  "kvkkPage": {
+    "subtitle": "Rechtlicher Hinweis",
+    "title1": "DSGVO",
+    "title2": "DATENSCHUTZERKLÄRUNG",
+    "toc": "INHALTSVERZEICHNIS",
+    "sec1": "1. Datenverantwortlicher",
+    "sec2": "2. Verarbeitungszweck",
+    "sec3": "3. Ihre gesetzlichen Rechte",
+    "back": "ZURÜCK ZUR STARTSEITE"
+  }
+}

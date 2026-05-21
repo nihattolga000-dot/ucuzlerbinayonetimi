@@ -1,0 +1,96 @@
+{
+  "siteName": "Ucuzler Gestión de Edificios",
+  "header": {
+    "home": "INICIO",
+    "about": "SOBRE NOSOTROS",
+    "services": "SERVICIOS",
+    "references": "REFERENCIAS",
+    "contact": "CONTACTO",
+    "kvkk": "PRIVACIDAD",
+    "getQuote": "OBTENER COTIZACIÓN",
+    "freeQuote": "COTIZACIÓN GRATUITA",
+    "contactUs": "Contáctenos",
+    "subTitle": "Gestión de Edificios"
+  },
+  "hero": {
+    "slide1": {
+      "title": "LA GESTIÓN DE EDIFICIOS MÁS",
+      "highlight": "CONFIABLE DE KAYSERI",
+      "desc": "Conozca una gestión transparente, digital y profesional."
+    },
+    "slide2": {
+      "title": "AÑADIENDO VALOR A",
+      "highlight": "SUS ESPACIOS DE VIDA",
+      "desc": "Asegurando la paz vecinal con soluciones orientadas a la tecnología."
+    },
+    "freeQuote": "COTIZACIÓN GRATUITA",
+    "services": "NUESTROS SERVICIOS"
+  },
+  "about": {
+    "subtitle": "Sobre Nosotros",
+    "title1": "Toque Profesional en",
+    "title2": "Gestión de Edificios",
+    "desc": "Como Ucuzler Gestión de Edificios, combinamos tecnología y transparencia para asegurar la paz y el orden en sus espacios vitales. Gestionamos los procesos legales y financieros con nuestro personal experto, dejándole solo la comodidad de vivir.",
+    "list1": "Soporte Técnico 24/7 y Respuesta a Emergencias",
+    "list2": "Contabilidad Transparente y Seguimiento Online",
+    "list3": "Servicio de Consultoría Legal",
+    "stats": {
+      "score": "Puntuación",
+      "managed": "Sitios Gestionados",
+      "happy": "Residentes Felices",
+      "satisfaction": "Satisfacción"
+    }
+  },
+  "footer": {
+    "desc": "Gestión de edificios transparente y confiable en Kayseri. Sin sistema de fondo común, el dinero de cada edificio en su propia cuenta.",
+    "quickLinks": "Enlaces Rápidos",
+    "corporate": "Corporativo",
+    "social": "Redes Sociales",
+    "socialDesc": "Síganos para actualizaciones y anuncios.",
+    "freeDiscovery": "Inspección Gratuita",
+    "freeDiscoveryDesc": "Inspeccionemos su edificio sin costo y preparemos una cotización personalizada.",
+    "getQuoteBtn": "Obtener Cotización →",
+    "rights": "TODOS LOS DERECHOS RESERVADOS",
+    "slogan": "Gestión Profesional · Futuro Seguro · Kayseri",
+    "devCredit": "Desarrollado por NG Web Yazılım."
+  },
+  "contact": {
+    "title": "CENTRO DE CONTACTO",
+    "subtitle": "Póngase en contacto con nosotros",
+    "info": "NUESTRA INFO",
+    "address": "Dirección",
+    "addressValue": "Sahabiye Mah. Ahmet Pasa Cad. Kalender Is Merkezi No:41 Piso:6 Kocasinan / KAYSERI",
+    "phone": "Teléfono y WhatsApp",
+    "hours": "Horario Laboral",
+    "hoursValue": "Lunes - Sábado 09:00 - 18:00",
+    "formTitle": "¿Cómo podemos ayudarle?",
+    "name": "Nombre Completo",
+    "namePlace": "Su Nombre y Apellido",
+    "phoneLabel": "Teléfono",
+    "phonePlace": "Número de Teléfono",
+    "email": "Correo Electrónico",
+    "emailPlace": "ejemplo@correo.com",
+    "subject": "Asunto",
+    "subjectOpt1": "Quiero obtener una cotización de gestión",
+    "subjectOpt2": "Queja / Sugerencia",
+    "subjectOpt3": "Otro",
+    "message": "Mensaje",
+    "messagePlace": "Escriba su mensaje aquí...",
+    "submit": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "successTitle": "¡Genial!",
+    "successDesc": "Su mensaje fue enviado exitosamente, gracias.",
+    "errorTitle": "Ocurrió un error",
+    "errorDesc": "Por favor, compruebe su conexión a internet."
+  },
+  "kvkkPage": {
+    "subtitle": "Aviso Legal",
+    "title1": "RGPD",
+    "title2": "POLÍTICA DE PRIVACIDAD",
+    "toc": "ÍNDICE",
+    "sec1": "1. Responsable de los Datos",
+    "sec2": "2. Propósito del Procesamiento",
+    "sec3": "3. Sus Derechos Legales",
+    "back": "VOLVER AL INICIO"
+  }
+}

@@ -4,23 +4,26 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-const slides = [
-  {
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070",
-    title: "KAYSERİ'NİN EN GÜVENİLİR",
-    highlight: "BİNA YÖNETİMİ",
-    desc: "Şeffaf, dijital ve profesyonel yönetim anlayışıyla tanışın."
-  },
-  {
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070",
-    title: "YAŞAM ALANLARINIZA",
-    highlight: "DEĞER KATIYORUZ",
-    desc: "Teknoloji odaklı çözümlerle komşuluk huzurunu sağlıyoruz."
-  }
-];
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("hero");
   const [index, setIndex] = useState(0);
+
+  const slides = [
+    {
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070",
+      title: t("slide1.title"),
+      highlight: t("slide1.highlight"),
+      desc: t("slide1.desc")
+    },
+    {
+      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070",
+      title: t("slide2.title"),
+      highlight: t("slide2.highlight"),
+      desc: t("slide2.desc")
+    }
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -83,7 +86,7 @@ export default function Hero() {
                 href="https://wa.me/905538873616" 
                 className="bg-cyan-600 hover:bg-cyan-500 text-white font-black py-4 px-8 md:px-10 rounded-sm shadow-xl shadow-cyan-600/20 transition-all text-sm md:text-base text-center border-b-4 border-cyan-800"
               >
-                ÜCRETSİZ TEKLİF AL
+                {t("freeQuote")}
               </Link>
               <Link 
                 href="#hizmetler" 
@@ -93,7 +96,7 @@ export default function Hero() {
                   document.querySelector('#hizmetler')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                HİZMETLERİMİZ
+                {t("services")}
               </Link>
             </motion.div>
           </motion.div>

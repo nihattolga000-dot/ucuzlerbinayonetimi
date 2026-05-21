@@ -1,0 +1,96 @@
+{
+  "siteName": "Ucuzler Gestion Immobilière",
+  "header": {
+    "home": "ACCUEIL",
+    "about": "À PROPOS",
+    "services": "SERVICES",
+    "references": "RÉFÉRENCES",
+    "contact": "CONTACT",
+    "kvkk": "CONFIDENTIALITÉ",
+    "getQuote": "OBTENIR UN DEVIS",
+    "freeQuote": "DEVIS GRATUIT",
+    "contactUs": "Contactez-nous",
+    "subTitle": "Gestion Immobilière"
+  },
+  "hero": {
+    "slide1": {
+      "title": "LA GESTION IMMOBILIÈRE LA PLUS",
+      "highlight": "FIABLE DE KAYSERI",
+      "desc": "Découvrez une gestion transparente, numérique et professionnelle."
+    },
+    "slide2": {
+      "title": "NOUS AJOUTONS DE LA VALEUR",
+      "highlight": "À VOS ESPACES DE VIE",
+      "desc": "Assurer la paix du voisinage avec des solutions technologiques."
+    },
+    "freeQuote": "DEVIS GRATUIT",
+    "services": "NOS SERVICES"
+  },
+  "about": {
+    "subtitle": "À Propos",
+    "title1": "Touche Professionnelle en",
+    "title2": "Gestion Immobilière",
+    "desc": "Chez Ucuzler Gestion Immobilière, nous combinons technologie et transparence pour assurer la paix et l'ordre dans vos espaces de vie. Nous gérons les processus juridiques et financiers avec notre personnel expert, ne vous laissant que le confort de vivre.",
+    "list1": "Assistance Technique 24/7 et Intervention d'Urgence",
+    "list2": "Comptabilité Transparente et Suivi en Ligne",
+    "list3": "Service de Conseil Juridique",
+    "stats": {
+      "score": "Score",
+      "managed": "Sites Gérés",
+      "happy": "Résidents Heureux",
+      "satisfaction": "Satisfaction"
+    }
+  },
+  "footer": {
+    "desc": "Gestion immobilière transparente et fiable à Kayseri. Pas de système de fonds commun, l'argent de chaque site sur son propre compte.",
+    "quickLinks": "Liens Rapides",
+    "corporate": "Entreprise",
+    "social": "Réseaux Sociaux",
+    "socialDesc": "Suivez-nous pour des mises à jour et des annonces.",
+    "freeDiscovery": "Inspection Gratuite",
+    "freeDiscoveryDesc": "Inspectons votre bâtiment gratuitement et préparons un devis personnalisé.",
+    "getQuoteBtn": "Obtenir un Devis →",
+    "rights": "TOUS DROITS RÉSERVÉS",
+    "slogan": "Gestion Professionnelle · Avenir Sûr · Kayseri",
+    "devCredit": "Développé par NG Web Yazılım."
+  },
+  "contact": {
+    "title": "CENTRE DE CONTACT",
+    "subtitle": "Contactez-nous",
+    "info": "NOS INFOS",
+    "address": "Adresse",
+    "addressValue": "Sahabiye Mah. Ahmet Pasa Cad. Kalender Is Merkezi No:41 Étage:6 Kocasinan / KAYSERI",
+    "phone": "Téléphone et WhatsApp",
+    "hours": "Heures de Travail",
+    "hoursValue": "Lundi - Samedi 09:00 - 18:00",
+    "formTitle": "Comment pouvons-nous vous aider ?",
+    "name": "Nom Complet",
+    "namePlace": "Votre Nom et Prénom",
+    "phoneLabel": "Téléphone",
+    "phonePlace": "Numéro de Téléphone",
+    "email": "E-mail",
+    "emailPlace": "exemple@mail.com",
+    "subject": "Sujet",
+    "subjectOpt1": "Je veux obtenir un devis de gestion",
+    "subjectOpt2": "Plainte / Suggestion",
+    "subjectOpt3": "Autre",
+    "message": "Message",
+    "messagePlace": "Écrivez votre message ici...",
+    "submit": "Envoyer le Message",
+    "sending": "Envoi...",
+    "successTitle": "Génial !",
+    "successDesc": "Votre message a été envoyé avec succès, merci.",
+    "errorTitle": "Erreur Survenue",
+    "errorDesc": "Veuillez vérifier votre connexion internet."
+  },
+  "kvkkPage": {
+    "subtitle": "Mentions Légales",
+    "title1": "RGPD",
+    "title2": "POLITIQUE DE CONFIDENTIALITÉ",
+    "toc": "TABLE DES MATIÈRES",
+    "sec1": "1. Responsable du Traitement",
+    "sec2": "2. Finalité du Traitement",
+    "sec3": "3. Vos Droits Légaux",
+    "back": "RETOUR À L'ACCUEIL"
+  }
+}

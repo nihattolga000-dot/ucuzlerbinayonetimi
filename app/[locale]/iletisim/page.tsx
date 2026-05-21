@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import { FaPaperPlane, FaCheckCircle, FaExclamationCircle, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from "next-intl";
 
 const Iletisim = () => {
+  const t = useTranslations("contact");
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -68,7 +70,7 @@ const Iletisim = () => {
               className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-full mb-6"
             >
               <FaPaperPlane className="text-cyan-300 dark:text-cyan-400" />
-              <span className="text-cyan-50 text-xs font-bold uppercase tracking-widest">Bizimle İletişime Geçin</span>
+              <span className="text-cyan-50 text-xs font-bold uppercase tracking-widest">{t("subtitle")}</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -76,8 +78,8 @@ const Iletisim = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-none"
             >
-              İLETİŞİM <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">MERKEZİ</span>
+              {t("title").split(" ")[0]} <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">{t("title").split(" ")[1]}</span>
             </motion.h1>
           </div>
           
@@ -127,31 +129,28 @@ const Iletisim = () => {
               className="bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-white/10 rounded-3xl p-8 shadow-xl dark:shadow-none h-full transition-colors duration-300"
             >
               <h3 className="text-blue-950 dark:text-white font-black uppercase tracking-widest mb-6 border-b border-gray-100 dark:border-white/10 pb-4">
-                BİLGİLERİMİZ
+                {t("info")}
               </h3>
               
               <div className="space-y-8">
                 <div>
-                  <h4 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2">Adres</h4>
+                  <h4 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2">{t("address")}</h4>
                   <p className="text-gray-800 dark:text-gray-200 font-medium leading-relaxed">
-                    Sahabiye Mah. Ahmet Paşa Cad.<br/>
-                    Kalender İş Merkezi No:41 Kat:6<br/>
-                    Kocasinan / KAYSERİ
+                    {t("addressValue")}
                   </p>
                 </div>
                 
                 <div>
-                  <h4 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2">Telefon & WhatsApp</h4>
-                  <a href="tel:+905538873616" className="text-xl font-black text-cyan-600 dark:text-cyan-400 hover:text-blue-900 dark:hover:text-cyan-300 transition-colors">
+                  <h4 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2">{t("phone")}</h4>
+                  <a href="tel:+905538873616" dir="ltr" className="inline-block text-xl font-black text-cyan-600 dark:text-cyan-400 hover:text-blue-900 dark:hover:text-cyan-300 transition-colors">
                     +90 553 887 36 16
                   </a>
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2">Çalışma Saatleri</h4>
+                  <h4 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2">{t("hours")}</h4>
                   <p className="text-gray-800 dark:text-gray-200 font-medium">
-                    Pazartesi - Cumartesi<br/>
-                    09:00 - 18:00
+                    {t("hoursValue")}
                   </p>
                 </div>
               </div>
@@ -168,57 +167,57 @@ const Iletisim = () => {
               <form onSubmit={handleSubmit} className="bg-white dark:bg-[#0f172a] p-8 md:p-10 rounded-3xl shadow-xl dark:shadow-none border border-gray-200 dark:border-white/10 relative transition-colors duration-300">
                 
                 <h3 className="text-2xl font-black text-blue-950 dark:text-white uppercase tracking-tighter mb-8">
-                  Size Nasıl Yardımcı Olabiliriz?
+                  {t("formTitle")}
                 </h3>
 
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">Ad Soyad</label>
+                      <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">{t("name")}</label>
                       <input 
                         type="text" name="user_name" value={formData.user_name} onChange={handleChange} required 
                         className="w-full px-5 py-4 rounded-xl bg-gray-50 dark:bg-[#020617] border-2 border-transparent focus:border-cyan-500 dark:focus:border-cyan-400 outline-none transition-all text-gray-800 dark:text-white font-medium placeholder-gray-400 dark:placeholder-gray-600 shadow-inner dark:shadow-none" 
-                        placeholder="Adınız Soyadınız" 
+                        placeholder={t("namePlace")} 
                       />
                     </div>
 
                     <div>
-                      <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">Telefon</label>
+                      <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">{t("phoneLabel")}</label>
                       <input 
                         type="tel" name="user_phone" value={formData.user_phone} onChange={handleChange} required 
                         className="w-full px-5 py-4 rounded-xl bg-gray-50 dark:bg-[#020617] border-2 border-transparent focus:border-cyan-500 dark:focus:border-cyan-400 outline-none transition-all text-gray-800 dark:text-white font-medium placeholder-gray-400 dark:placeholder-gray-600 shadow-inner dark:shadow-none" 
-                        placeholder="05XX XXX XX XX" 
+                        placeholder={t("phonePlace")} 
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">E-posta</label>
+                    <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">{t("email")}</label>
                     <input 
                       type="email" name="user_email" value={formData.user_email} onChange={handleChange} required 
                       className="w-full px-5 py-4 rounded-xl bg-gray-50 dark:bg-[#020617] border-2 border-transparent focus:border-cyan-500 dark:focus:border-cyan-400 outline-none transition-all text-gray-800 dark:text-white font-medium placeholder-gray-400 dark:placeholder-gray-600 shadow-inner dark:shadow-none" 
-                      placeholder="ornek@mail.com" 
+                      placeholder={t("emailPlace")} 
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">Konu</label>
+                    <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">{t("subject")}</label>
                     <div className="relative">
                       <select name="subject" value={formData.subject} onChange={handleChange} className="w-full px-5 py-4 rounded-xl bg-gray-50 dark:bg-[#020617] border-2 border-transparent focus:border-cyan-500 dark:focus:border-cyan-400 outline-none transition-all text-gray-800 dark:text-white font-medium appearance-none cursor-pointer shadow-inner dark:shadow-none">
-                        <option value="Yönetim Teklifi Almak İstiyorum" className="text-gray-900">Yönetim Teklifi Almak İstiyorum</option>
-                        <option value="Şikayet / Öneri" className="text-gray-900">Şikayet / Öneri</option>
-                        <option value="Diğer" className="text-gray-900">Diğer</option>
+                        <option value="Yönetim Teklifi Almak İstiyorum" className="text-gray-900">{t("subjectOpt1")}</option>
+                        <option value="Şikayet / Öneri" className="text-gray-900">{t("subjectOpt2")}</option>
+                        <option value="Diğer" className="text-gray-900">{t("subjectOpt3")}</option>
                       </select>
                       <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">▼</div>
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">Mesaj</label>
+                    <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase ml-1 mb-2 block">{t("message")}</label>
                     <textarea 
                       name="message" value={formData.message} onChange={handleChange} required rows={5} 
                       className="w-full px-5 py-4 rounded-xl bg-gray-50 dark:bg-[#020617] border-2 border-transparent focus:border-cyan-500 dark:focus:border-cyan-400 outline-none transition-all text-gray-800 dark:text-white font-medium placeholder-gray-400 dark:placeholder-gray-600 resize-none shadow-inner dark:shadow-none" 
-                      placeholder="Mesajınızı buraya yazın..."
+                      placeholder={t("messagePlace")}
                     ></textarea>
                   </div>
 
@@ -234,11 +233,11 @@ const Iletisim = () => {
                     {loading ? (
                       <div className="flex items-center gap-2">
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        <span>Gönderiliyor...</span>
+                        <span>{t("sending")}</span>
                       </div>
                     ) : (
                       <>
-                        <span>Mesajı Gönder</span>
+                        <span>{t("submit")}</span>
                         <FaPaperPlane />
                       </>
                     )}
@@ -256,8 +255,8 @@ const Iletisim = () => {
                     >
                       <FaCheckCircle className="text-xl shrink-0" />
                       <div>
-                        <span className="font-bold block">Harika!</span>
-                        <span className="text-sm">Mesajınız başarıyla iletildi, teşekkürler.</span>
+                        <span className="font-bold block">{t("successTitle")}</span>
+                        <span className="text-sm">{t("successDesc")}</span>
                       </div>
                     </motion.div>
                   )}
@@ -271,8 +270,8 @@ const Iletisim = () => {
                     >
                       <FaExclamationCircle className="text-xl shrink-0" />
                       <div>
-                        <span className="font-bold block">Hata Oluştu</span>
-                        <span className="text-sm">{errorMessage || 'Lütfen internet bağlantınızı kontrol edin.'}</span>
+                        <span className="font-bold block">{t("errorTitle")}</span>
+                        <span className="text-sm">{errorMessage || t("errorDesc")}</span>
                       </div>
                     </motion.div>
                   )}

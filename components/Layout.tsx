@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { FaWhatsapp } from 'react-icons/fa'; // Kurulum: 
+import { FaWhatsapp } from 'react-icons/fa';
+import { useTranslations } from "next-intl";
 
 const WhatsAppButton = () => {
+  const t = useTranslations("header");
   return (
     <motion.a
       href="https://wa.me/905538873616"
@@ -17,7 +19,7 @@ const WhatsAppButton = () => {
     >
       <FaWhatsapp size={32} />
       {/* Mobilde sadece ikon görünür, geniş ekranda yazı eklenebilir */}
-      <span className="hidden md:inline ml-2 font-bold">Bize Yazın</span>
+      <span className="hidden md:inline ml-2 font-bold">{t("contactUs")}</span>
     </motion.a>
   );
 };

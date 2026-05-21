@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView, animate } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 // --- SAYAÇ BİLEŞENİ ---
 interface CounterProps {
@@ -31,6 +32,8 @@ function Counter({ from, to, duration = 2, suffix = "" }: CounterProps) {
 
 // --- ANA ABOUT BİLEŞENİ ---
 const About = () => {
+  const t = useTranslations("about");
+
   return (
     <section id="hakkimizda" className="py-20 bg-white dark:bg-[#020617] overflow-hidden transition-colors duration-300">
       <div className="w-full max-w-7xl mx-auto px-4">
@@ -43,23 +46,21 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="lg:col-span-7"
           >
-            <h2 className="text-sm font-bold text-cyan-600 dark:text-cyan-400 tracking-[0.3em] uppercase mb-2">Hakkımızda</h2>
+            <h2 className="text-sm font-bold text-cyan-600 dark:text-cyan-400 tracking-[0.3em] uppercase mb-2">{t("subtitle")}</h2>
             <h3 className="text-3xl md:text-5xl font-black text-blue-950 dark:text-white mb-6 tracking-tighter uppercase leading-tight">
-              Bina Yönetiminde <br/>
-              <span className="text-cyan-600 dark:text-cyan-400">Profesyonel Dokunuş</span>
+              {t("title1")} <br/>
+              <span className="text-cyan-600 dark:text-cyan-400">{t("title2")}</span>
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed font-medium">
-              Üçüzler Bina Yönetimi olarak, yaşam alanlarınızın huzurunu ve düzenini sağlamak için teknolojiyi ve şeffaflığı birleştiriyoruz. 
-              Apartman, site ve iş merkezleri yönetiminde, hukuki ve mali süreçleri uzman kadromuzla yönetiyor, 
-              size sadece konforu yaşamak kalıyor.
+              {t("desc")}
             </p>
             
             {/* Madde İşaretleri */}
             <ul className="space-y-4">
               {[
-                "7/24 Teknik Destek ve Acil Müdahale",
-                "Şeffaf Muhasebe ve Online Takip",
-                "Hukuki Danışmanlık Hizmeti"
+                t("list1"),
+                t("list2"),
+                t("list3")
               ].map((text, i) => (
                 <motion.li 
                   key={i}
@@ -89,7 +90,7 @@ const About = () => {
               <div className="text-4xl font-black text-blue-950 dark:text-white mb-2">
                 <Counter from={0} to={5} suffix="/5" />
               </div>
-              <div className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Puan</div>
+              <div className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">{t("stats.score")}</div>
             </div>
 
             {/* Kutu 2 - Yönetilen Site */}
@@ -97,7 +98,7 @@ const About = () => {
               <div className="text-4xl font-black text-cyan-600 dark:text-cyan-400 mb-2">
                 <Counter from={0} to={10} suffix="+" />
               </div>
-              <div className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Yönetilen Site</div>
+              <div className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">{t("stats.managed")}</div>
             </div>
 
             {/* Kutu 3 - Mutlu Sakin */}
@@ -105,7 +106,7 @@ const About = () => {
               <div className="text-4xl font-black text-blue-950 dark:text-white mb-2">
                 <Counter from={0} to={900} suffix="+" />
               </div>
-              <div className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Mutlu Sakin</div>
+              <div className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">{t("stats.happy")}</div>
             </div>
 
             {/* Kutu 4 - Müşteri Memnuniyeti */}
@@ -113,7 +114,7 @@ const About = () => {
               <div className="text-4xl font-black text-white dark:text-cyan-400 mb-2">
                 <Counter from={0} to={100} suffix="%" />
               </div>
-              <div className="text-sm font-bold text-cyan-400 uppercase tracking-widest">Memnuniyet</div>
+              <div className="text-sm font-bold text-cyan-400 uppercase tracking-widest">{t("stats.satisfaction")}</div>
             </div>
           </motion.div>
 

@@ -1,0 +1,96 @@
+{
+  "siteName": "Üçüzler Bina Yönetimi",
+  "header": {
+    "home": "ANA SAYFA",
+    "about": "HAKKIMIZDA",
+    "services": "HİZMETLERİMİZ",
+    "references": "REFERANSLAR",
+    "contact": "İLETİŞİM",
+    "kvkk": "KVKK",
+    "getQuote": "TEKLİF AL",
+    "freeQuote": "ÜCRETSİZ TEKLİF AL",
+    "contactUs": "Bize Ulaşın",
+    "subTitle": "Bina Yönetimi"
+  },
+  "hero": {
+    "slide1": {
+      "title": "KAYSERİ'NİN EN GÜVENİLİR",
+      "highlight": "BİNA YÖNETİMİ",
+      "desc": "Şeffaf, dijital ve profesyonel yönetim anlayışıyla tanışın."
+    },
+    "slide2": {
+      "title": "YAŞAM ALANLARINIZA",
+      "highlight": "DEĞER KATIYORUZ",
+      "desc": "Teknoloji odaklı çözümlerle komşuluk huzurunu sağlıyoruz."
+    },
+    "freeQuote": "ÜCRETSİZ TEKLİF AL",
+    "services": "HİZMETLERİMİZ"
+  },
+  "about": {
+    "subtitle": "Hakkımızda",
+    "title1": "Bina Yönetiminde",
+    "title2": "Profesyonel Dokunuş",
+    "desc": "Üçüzler Bina Yönetimi olarak, yaşam alanlarınızın huzurunu ve düzenini sağlamak için teknolojiyi ve şeffaflığı birleştiriyoruz. Apartman, site ve iş merkezleri yönetiminde, hukuki ve mali süreçleri uzman kadromuzla yönetiyor, size sadece konforu yaşamak kalıyor.",
+    "list1": "7/24 Teknik Destek ve Acil Müdahale",
+    "list2": "Şeffaf Muhasebe ve Online Takip",
+    "list3": "Hukuki Danışmanlık Hizmeti",
+    "stats": {
+      "score": "Puan",
+      "managed": "Yönetilen Site",
+      "happy": "Mutlu Sakin",
+      "satisfaction": "Memnuniyet"
+    }
+  },
+  "footer": {
+    "desc": "Kayseri'de şeffaf, güvenilir bina yönetimi. Havuz sistemi olmadan, her sitenin parası kendi hesabında.",
+    "quickLinks": "Hızlı Erişim",
+    "corporate": "Kurumsal",
+    "social": "Sosyal Medya",
+    "socialDesc": "Güncel duyurular ve bilgilendirmeler için bizi takip edin.",
+    "freeDiscovery": "Ücretsiz Keşif",
+    "freeDiscoveryDesc": "Binanızı ücretsiz yerinde inceleyelim, size özel teklif hazırlayalım.",
+    "getQuoteBtn": "Teklif Al →",
+    "rights": "TÜM HAKLARI SAKLIDIR",
+    "slogan": "Profesyonel Yönetim · Güvenli Gelecek · Kayseri",
+    "devCredit": "NG Web Yazılım Tarafından Geliştirilmiştir."
+  },
+  "contact": {
+    "title": "İLETİŞİM MERKEZİ",
+    "subtitle": "Bizimle İletişime Geçin",
+    "info": "BİLGİLERİMİZ",
+    "address": "Adres",
+    "addressValue": "Sahabiye Mah. Ahmet Paşa Cad. Kalender İş Merkezi No:41 Kat:6 Kocasinan / KAYSERİ",
+    "phone": "Telefon & WhatsApp",
+    "hours": "Çalışma Saatleri",
+    "hoursValue": "Pazartesi - Cumartesi 09:00 - 18:00",
+    "formTitle": "Size Nasıl Yardımcı Olabiliriz?",
+    "name": "Ad Soyad",
+    "namePlace": "Adınız Soyadınız",
+    "phoneLabel": "Telefon",
+    "phonePlace": "05XX XXX XX XX",
+    "email": "E-posta",
+    "emailPlace": "ornek@mail.com",
+    "subject": "Konu",
+    "subjectOpt1": "Yönetim Teklifi Almak İstiyorum",
+    "subjectOpt2": "Şikayet / Öneri",
+    "subjectOpt3": "Diğer",
+    "message": "Mesaj",
+    "messagePlace": "Mesajınızı buraya yazın...",
+    "submit": "Mesajı Gönder",
+    "sending": "Gönderiliyor...",
+    "successTitle": "Harika!",
+    "successDesc": "Mesajınız başarıyla iletildi, teşekkürler.",
+    "errorTitle": "Hata Oluştu",
+    "errorDesc": "Lütfen internet bağlantınızı kontrol edin."
+  },
+  "kvkkPage": {
+    "subtitle": "Yasal Bilgilendirme",
+    "title1": "KVKK",
+    "title2": "AYDINLATMA METNİ",
+    "toc": "İÇİNDEKİLER",
+    "sec1": "1. Veri Sorumlusu",
+    "sec2": "2. İşlenme Amacı",
+    "sec3": "3. Yasal Haklarınız",
+    "back": "ANA SAYFAYA DÖN"
+  }
+}

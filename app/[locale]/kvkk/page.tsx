@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaShieldAlt, FaArrowLeft, FaFileSignature, FaUserSecret, FaGavel, FaRegCheckCircle, FaBuilding } from 'react-icons/fa';
+import { useTranslations } from "next-intl";
 
 export default function KvkkPage() {
+  const t = useTranslations("kvkkPage");
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-[#020617] pb-32 transition-colors duration-300">
       {/* ÜST HEADER - Güçlü Kurumsal Görünüm */}
@@ -20,7 +22,7 @@ export default function KvkkPage() {
               className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-full mb-6"
             >
               <FaShieldAlt className="text-cyan-300 dark:text-cyan-400" />
-              <span className="text-cyan-50 text-xs font-bold uppercase tracking-widest">Yasal Bilgilendirme</span>
+              <span className="text-cyan-50 text-xs font-bold uppercase tracking-widest">{t("subtitle")}</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -28,8 +30,8 @@ export default function KvkkPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-none"
             >
-              KVKK <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">AYDINLATMA METNİ</span>
+              {t("title1")} <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">{t("title2")}</span>
             </motion.h1>
           </div>
           
@@ -52,25 +54,25 @@ export default function KvkkPage() {
           <div className="hidden lg:block lg:col-span-4 xl:col-span-3">
             <div className="sticky top-32 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-8 backdrop-blur-md shadow-2xl dark:shadow-none transition-colors duration-300">
               <h3 className="text-blue-950 dark:text-white font-black uppercase tracking-widest mb-6 border-b border-gray-100 dark:border-white/10 pb-4">
-                İÇİNDEKİLER
+                {t("toc")}
               </h3>
               <ul className="space-y-4">
                 <li>
                   <a href="#veri-sorumlusu" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-medium">
                     <span className="w-6 h-6 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-xs font-bold text-blue-900 dark:text-gray-300">1</span>
-                    Veri Sorumlusu
+                    {t("sec1")}
                   </a>
                 </li>
                 <li>
                   <a href="#islenme-amaci" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-medium">
                     <span className="w-6 h-6 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-xs font-bold text-blue-900 dark:text-gray-300">2</span>
-                    İşlenme Amacı
+                    {t("sec2")}
                   </a>
                 </li>
                 <li>
                   <a href="#yasal-haklar" className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-medium">
                     <span className="w-6 h-6 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center text-xs font-bold text-blue-900 dark:text-gray-300">3</span>
-                    Yasal Haklarınız
+                    {t("sec3")}
                   </a>
                 </li>
               </ul>
@@ -80,7 +82,7 @@ export default function KvkkPage() {
                   href="/" 
                   className="flex items-center justify-center gap-2 w-full py-4 bg-blue-950 dark:bg-white text-white dark:text-blue-950 font-black rounded-xl hover:bg-cyan-600 dark:hover:bg-cyan-400 transition-colors uppercase tracking-widest text-xs shadow-lg dark:shadow-none"
                 >
-                  <FaArrowLeft /> ANA SAYFAYA DÖN
+                  <FaArrowLeft /> {t("back")}
                 </Link>
               </div>
             </div>
@@ -112,7 +114,7 @@ export default function KvkkPage() {
                 <div className="w-12 h-12 bg-gray-50 dark:bg-white/10 text-cyan-600 dark:text-cyan-400 rounded-full flex items-center justify-center text-2xl border border-gray-200 dark:border-transparent">
                   <FaBuilding />
                 </div>
-                <h2 className="text-2xl font-black text-blue-950 dark:text-white uppercase tracking-tighter m-0">1. Veri Sorumlusu</h2>
+                <h2 className="text-2xl font-black text-blue-950 dark:text-white uppercase tracking-tighter m-0">{t("sec1")}</h2>
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                 Sahabiye Mahallesi Ahmet Paşa Caddesi Kalender İş Merkezi 41/10 adresinde mukim <strong className="text-cyan-600 dark:text-cyan-400">Üçüzler Bina Yönetimi</strong>, KVKK kapsamında "Veri Sorumlusu" sıfatıyla hareket etmekte olup, kişisel verileriniz işbu Aydınlatma Metni'nde açıklanan sınırlar çerçevesinde işlenmektedir.
@@ -131,7 +133,7 @@ export default function KvkkPage() {
                 <div className="w-12 h-12 bg-gray-50 dark:bg-white/10 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center text-2xl border border-gray-200 dark:border-transparent">
                   <FaUserSecret />
                 </div>
-                <h2 className="text-2xl font-black text-blue-950 dark:text-white uppercase tracking-tighter m-0">2. Verilerin İşlenme Amacı</h2>
+                <h2 className="text-2xl font-black text-blue-950 dark:text-white uppercase tracking-tighter m-0">{t("sec2")}</h2>
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-6">
                 Kişisel verileriniz, şirketimiz tarafından sunulan yönetim hizmetlerinin eksiksiz bir şekilde ifa edilebilmesi amacıyla işlenmektedir. Başlıca işleme amaçlarımız şunlardır:
@@ -163,7 +165,7 @@ export default function KvkkPage() {
                 <div className="w-14 h-14 bg-white dark:bg-white/10 text-cyan-600 dark:text-cyan-300 rounded-full flex items-center justify-center text-2xl border border-gray-100 dark:border-transparent shadow-sm dark:shadow-none">
                   <FaGavel />
                 </div>
-                <h2 className="text-2xl font-black text-blue-950 dark:text-white uppercase tracking-tighter m-0">3. Yasal Haklarınız</h2>
+                <h2 className="text-2xl font-black text-blue-950 dark:text-white uppercase tracking-tighter m-0">{t("sec3")}</h2>
               </div>
               <p className="text-gray-700 dark:text-blue-100 leading-relaxed text-lg mb-8">
                 KVKK’nın 11. maddesi uyarınca, veri sahibi olarak aşağıdaki yasal haklara sahipsiniz:
@@ -191,7 +193,7 @@ export default function KvkkPage() {
                 href="/" 
                 className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-5 bg-blue-950 dark:bg-white text-white dark:text-blue-950 font-black rounded-2xl shadow-xl hover:bg-cyan-600 dark:hover:bg-cyan-400 transition-colors uppercase tracking-widest text-sm"
               >
-                <FaArrowLeft /> ANA SAYFAYA DÖN
+                <FaArrowLeft /> {t("back")}
               </Link>
             </div>
 

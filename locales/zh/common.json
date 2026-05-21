@@ -1,0 +1,96 @@
+{
+  "siteName": "Ucuzler 建筑管理",
+  "header": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务",
+    "references": "参考项目",
+    "contact": "联系我们",
+    "kvkk": "隐私政策",
+    "getQuote": "获取报价",
+    "freeQuote": "免费报价",
+    "contactUs": "联系我们",
+    "subTitle": "建筑管理"
+  },
+  "hero": {
+    "slide1": {
+      "title": "开塞利最可靠的",
+      "highlight": "建筑管理",
+      "desc": "体验透明、数字化和专业的管理。"
+    },
+    "slide2": {
+      "title": "为您的生活空间",
+      "highlight": "增添价值",
+      "desc": "通过技术导向的解决方案确保邻里和平。"
+    },
+    "freeQuote": "免费报价",
+    "services": "我们的服务"
+  },
+  "about": {
+    "subtitle": "关于我们",
+    "title1": "专业触感于",
+    "title2": "建筑管理",
+    "desc": "作为 Ucuzler 建筑管理，我们将技术与透明度结合起来，以确保您生活空间的和平与秩序。我们用专业人员管理法律和财务流程，只留给您居住的舒适。",
+    "list1": "全天候技术支持与紧急响应",
+    "list2": "透明的会计和在线跟踪",
+    "list3": "法律咨询服务",
+    "stats": {
+      "score": "评分",
+      "managed": "管理地点",
+      "happy": "幸福居民",
+      "satisfaction": "满意度"
+    }
+  },
+  "footer": {
+    "desc": "开塞利透明可靠的建筑管理。没有资金池系统，每个地点的资金都在自己的账户中。",
+    "quickLinks": "快速链接",
+    "corporate": "企业信息",
+    "social": "社交媒体",
+    "socialDesc": "关注我们获取更新和公告。",
+    "freeDiscovery": "免费检查",
+    "freeDiscoveryDesc": "让我们免费检查您的建筑并准备定制报价。",
+    "getQuoteBtn": "获取报价 →",
+    "rights": "版权所有",
+    "slogan": "专业管理 · 安全未来 · 开塞利",
+    "devCredit": "由 NG Web Yazılım 开发。"
+  },
+  "contact": {
+    "title": "联络中心",
+    "subtitle": "与我们取得联系",
+    "info": "我们的信息",
+    "address": "地址",
+    "addressValue": "Sahabiye Mah. Ahmet Pasa Cad. Kalender Is Merkezi No:41 Floor:6 Kocasinan / KAYSERI",
+    "phone": "电话和 WhatsApp",
+    "hours": "工作时间",
+    "hoursValue": "周一至周六 09:00 - 18:00",
+    "formTitle": "我们能为您做些什么？",
+    "name": "全名",
+    "namePlace": "您的姓名",
+    "phoneLabel": "电话",
+    "phonePlace": "电话号码",
+    "email": "电子邮件",
+    "emailPlace": "example@mail.com",
+    "subject": "主题",
+    "subjectOpt1": "我想获取管理报价",
+    "subjectOpt2": "投诉/建议",
+    "subjectOpt3": "其他",
+    "message": "信息",
+    "messagePlace": "在此写下您的信息...",
+    "submit": "发送信息",
+    "sending": "发送中...",
+    "successTitle": "太棒了！",
+    "successDesc": "您的信息已成功发送，谢谢。",
+    "errorTitle": "发生错误",
+    "errorDesc": "请检查您的网络连接。"
+  },
+  "kvkkPage": {
+    "subtitle": "法律声明",
+    "title1": "隐私",
+    "title2": "隐私政策",
+    "toc": "目录",
+    "sec1": "1. 数据控制者",
+    "sec2": "2. 处理目的",
+    "sec3": "3. 您的合法权益",
+    "back": "返回首页"
+  }
+}

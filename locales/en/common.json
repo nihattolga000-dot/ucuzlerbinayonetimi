@@ -1,0 +1,96 @@
+{
+  "siteName": "Ucuzler Building Management",
+  "header": {
+    "home": "HOME",
+    "about": "ABOUT US",
+    "services": "SERVICES",
+    "references": "REFERENCES",
+    "contact": "CONTACT",
+    "kvkk": "PRIVACY POLICY",
+    "getQuote": "GET QUOTE",
+    "freeQuote": "GET FREE QUOTE",
+    "contactUs": "Contact Us",
+    "subTitle": "Building Management"
+  },
+  "hero": {
+    "slide1": {
+      "title": "KAYSERI'S MOST RELIABLE",
+      "highlight": "BUILDING MANAGEMENT",
+      "desc": "Meet transparent, digital, and professional management."
+    },
+    "slide2": {
+      "title": "ADDING VALUE TO",
+      "highlight": "YOUR LIVING SPACES",
+      "desc": "Ensuring neighborhood peace with tech-oriented solutions."
+    },
+    "freeQuote": "GET FREE QUOTE",
+    "services": "OUR SERVICES"
+  },
+  "about": {
+    "subtitle": "About Us",
+    "title1": "Professional Touch in",
+    "title2": "Building Management",
+    "desc": "As Ucuzler Building Management, we combine technology and transparency to ensure peace and order in your living spaces. We manage legal and financial processes with our expert staff, leaving you only the comfort of living.",
+    "list1": "24/7 Technical Support & Emergency Response",
+    "list2": "Transparent Accounting & Online Tracking",
+    "list3": "Legal Consulting Service",
+    "stats": {
+      "score": "Score",
+      "managed": "Managed Sites",
+      "happy": "Happy Residents",
+      "satisfaction": "Satisfaction"
+    }
+  },
+  "footer": {
+    "desc": "Transparent, reliable building management in Kayseri. No pool system, each site's money in its own account.",
+    "quickLinks": "Quick Links",
+    "corporate": "Corporate",
+    "social": "Social Media",
+    "socialDesc": "Follow us for updates and announcements.",
+    "freeDiscovery": "Free Discovery",
+    "freeDiscoveryDesc": "Let us inspect your building for free and prepare a custom quote.",
+    "getQuoteBtn": "Get Quote →",
+    "rights": "ALL RIGHTS RESERVED",
+    "slogan": "Professional Management · Secure Future · Kayseri",
+    "devCredit": "Developed by NG Web Yazılım."
+  },
+  "contact": {
+    "title": "CONTACT CENTER",
+    "subtitle": "Get in Touch With Us",
+    "info": "OUR INFO",
+    "address": "Address",
+    "addressValue": "Sahabiye Mah. Ahmet Pasa Cad. Kalender Is Merkezi No:41 Floor:6 Kocasinan / KAYSERI",
+    "phone": "Phone & WhatsApp",
+    "hours": "Working Hours",
+    "hoursValue": "Monday - Saturday 09:00 - 18:00",
+    "formTitle": "How Can We Help You?",
+    "name": "Full Name",
+    "namePlace": "Your Name & Surname",
+    "phoneLabel": "Phone",
+    "phonePlace": "Phone Number",
+    "email": "Email",
+    "emailPlace": "example@mail.com",
+    "subject": "Subject",
+    "subjectOpt1": "I Want to Get a Management Quote",
+    "subjectOpt2": "Complaint / Suggestion",
+    "subjectOpt3": "Other",
+    "message": "Message",
+    "messagePlace": "Write your message here...",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Awesome!",
+    "successDesc": "Your message was sent successfully, thank you.",
+    "errorTitle": "Error Occurred",
+    "errorDesc": "Please check your internet connection."
+  },
+  "kvkkPage": {
+    "subtitle": "Legal Notice",
+    "title1": "GDPR",
+    "title2": "PRIVACY POLICY",
+    "toc": "TABLE OF CONTENTS",
+    "sec1": "1. Data Controller",
+    "sec2": "2. Purpose of Processing",
+    "sec3": "3. Your Legal Rights",
+    "back": "RETURN TO HOME"
+  }
+}

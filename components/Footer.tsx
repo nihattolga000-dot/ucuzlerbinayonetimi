@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 // --- VERİ TANIMLARI (modüler: tek yerden yönetim) ---
 const ILETISIM_BILGILERI = {
@@ -13,19 +14,12 @@ const ILETISIM_BILGILERI = {
   instagram: "https://www.instagram.com/ucuzlerbina_yonetimi/",
 };
 
-const SITE_LINKLERI = [
-  { label: "Ana Sayfa", href: "/" },
-  { label: "Hakkımızda", href: "/#hakkimizda" },
-  { label: "Hizmetlerimiz", href: "/#hizmetler" },
-  { label: "Referanslar", href: "/#referanslar" },
-  { label: "SSS", href: "/#sss" },
-];
-
 const KURUMSAL_LINKLER = [
   { label: "KVKK Aydınlatma Metni", href: "/kvkk" },
   { label: "Ücretsiz Teklif Al", href: "/iletisim" },
   { label: "Bize Ulaşın", href: "/iletisim" },
 ];
+// These will be translated inside the component
 
 // Framer Motion: her sütun kademeli (stagger) girer
 const columnVariant = {
@@ -38,6 +32,22 @@ const columnVariant = {
 };
 
 export default function Footer() {
+  const t = useTranslations("footer");
+  const th = useTranslations("header");
+
+  const SITE_LINKLERI = [
+    { label: th("home"), href: "/" },
+    { label: th("about"), href: "/#hakkimizda" },
+    { label: th("services"), href: "/#hizmetler" },
+    { label: th("references"), href: "/#referanslar" }
+  ];
+
+  const KURUMSAL_LINKLER = [
+    { label: th("kvkk"), href: "/kvkk" },
+    { label: th("freeQuote"), href: "/iletisim" },
+    { label: th("contactUs"), href: "/iletisim" },
+  ];
+
   return (
     <footer className="bg-blue-950 dark:bg-[#020617] text-white pt-16 pb-8 border-t border-white/5 relative overflow-hidden transition-colors duration-300">
 
@@ -70,14 +80,13 @@ export default function Footer() {
                 className="rounded-full bg-white p-0.5 shadow-xl object-cover"
               />
               <div className="flex flex-col leading-none">
-                {/* text-xl → Kural 4: rem tabanlı tipografi */}
                 <span className="font-black text-xl uppercase tracking-tighter">ÜÇÜZLER</span>
-                <span className="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Bina Yönetimi</span>
+                <span className="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">{th("subTitle")}</span>
               </div>
             </Link>
 
             <p className="text-sm text-blue-100/60 leading-relaxed">
-              Kayseri&apos;de şeffaf, güvenilir bina yönetimi. Havuz sistemi olmadan, her sitenin parası kendi hesabında.
+              {t("desc")}
             </p>
 
             <address className="not-italic flex flex-col gap-3 text-sm text-blue-100/70">
@@ -88,16 +97,15 @@ export default function Footer() {
                 <span>{ILETISIM_BILGILERI.adres}</span>
               </span>
               {/* py-2 → Kural 2 (Erişilebilirlik): dikey hit-box ≥ 44px */}
-              <a href={ILETISIM_BILGILERI.telefonHref} className="flex items-center gap-3 py-2 hover:text-cyan-400 transition-colors w-fit" aria-label="Telefon: +90 553 887 36 16">
+              <a href={ILETISIM_BILGILERI.telefonHref} dir="ltr" className="flex items-center gap-3 py-2 hover:text-cyan-400 transition-colors w-fit" aria-label="Telefon: +90 553 887 36 16">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
-                <span className="font-bold">{ILETISIM_BILGILERI.telefon}</span>
+                <span className="font-bold inline-block" dir="ltr">{ILETISIM_BILGILERI.telefon}</span>
               </a>
             </address>
           </motion.div>
 
-          {/* === BLOK 2: SİTE LİNKLERİ === */}
           <motion.div
             custom={1}
             initial="hidden"
@@ -107,7 +115,7 @@ export default function Footer() {
             className="flex flex-col gap-5"
           >
             <h3 className="text-sm font-bold uppercase tracking-widest text-cyan-400 border-b border-white/10 pb-2">
-              Hızlı Erişim
+              {t("quickLinks")}
             </h3>
             {/* py-2 px-2 → Kural 2: ≥44px dikey dokunmatik alan */}
             <ul className="flex flex-col gap-1" role="list">
@@ -122,7 +130,7 @@ export default function Footer() {
             </ul>
 
             <h3 className="text-sm font-bold uppercase tracking-widest text-cyan-400 border-b border-white/10 pb-2 mt-2">
-              Kurumsal
+              {t("corporate")}
             </h3>
             <ul className="flex flex-col gap-1" role="list">
               {KURUMSAL_LINKLER.map((link) => (
@@ -146,10 +154,10 @@ export default function Footer() {
             className="flex flex-col gap-5"
           >
             <h3 className="text-sm font-bold uppercase tracking-widest text-cyan-400 border-b border-white/10 pb-2">
-              Sosyal Medya
+              {t("social")}
             </h3>
             <p className="text-sm text-blue-100/60 leading-relaxed italic">
-              Güncel duyurular ve bilgilendirmeler için bizi takip edin.
+              {t("socialDesc")}
             </p>
 
             {/* p-3 → Kural 2: min 44×44px dokunmatik alan (p-3=12px × 2 + 22px ikon = 46px) */}
@@ -167,13 +175,13 @@ export default function Footer() {
 
             {/* CTA kutusu */}
             <div className="mt-2 p-5 rounded-2xl bg-white/5 border border-white/10">
-              <p className="text-xs text-blue-100/50 uppercase tracking-widest mb-3 font-bold">Ücretsiz Keşif</p>
+              <p className="text-xs text-blue-100/50 uppercase tracking-widest mb-3 font-bold">{t("freeDiscovery")}</p>
               <p className="text-sm text-blue-100/80 leading-relaxed mb-4">
-                Binanızı ücretsiz yerinde inceleyelim, size özel teklif hazırlayalım.
+                {t("freeDiscoveryDesc")}
               </p>
               {/* py-3 px-5 → Kural 2: ≥44px dikey dokunmatik alan */}
               <Link href="/iletisim" className="block py-3 px-5 rounded-xl text-center text-xs font-bold uppercase tracking-widest bg-cyan-500 text-white hover:bg-cyan-400 active:scale-95 transition-all">
-                Teklif Al →
+                {t("getQuoteBtn")}
               </Link>
             </div>
           </motion.div>
@@ -181,12 +189,15 @@ export default function Footer() {
 
         {/* --- ALT BANT ---
             flex-col mobilde (alt alta) → md:flex-row tablet'te (yan yana) → Kural 3 */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[10px] text-blue-100/30 uppercase tracking-[0.3em] font-bold text-center md:text-left">
-            © {new Date().getFullYear()} ÜÇÜZLER BİNA YÖNETİMİ · TÜM HAKLARI SAKLIDIR
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+          <p className="text-[10px] text-blue-100/30 uppercase tracking-[0.3em] font-bold md:text-left md:flex-1">
+            © {new Date().getFullYear()} ÜÇÜZLER BİNA YÖNETİMİ · {t("rights")}
           </p>
-          <p className="text-[10px] text-cyan-500/30 uppercase tracking-widest font-medium">
-            Profesyonel Yönetim · Güvenli Gelecek · Kayseri
+          <p className="text-[10px] text-blue-100/50 uppercase tracking-[0.2em] font-bold md:flex-1 text-center">
+            {t("devCredit")}
+          </p>
+          <p className="text-[10px] text-cyan-500/30 uppercase tracking-widest font-medium md:text-right md:flex-1">
+            {t("slogan")}
           </p>
         </div>
       </div>
