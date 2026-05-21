@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 // --- NAVİGASYON LİNKLERİ ---
 // Tek kaynak olarak burada tanımlandı → Kural 4 (Bileşen izolasyonu, modüler yapı)
@@ -52,6 +54,13 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   // Scroll sonrası navbar'ın gölge alması için
   const [scrolled, setScrolled] = useState(false);
+  // Tema yönetimi
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Sayfa scroll'unu dinle → navbar görünümünü güncelle
   useEffect(() => {
@@ -83,46 +92,50 @@ export default function Header() {
   };
 
   return (
-    // sticky: sayfayla birlikte kaymaz; z-[1000]: modaller ve overlayların altında kalmaz
-    <header
-      className={`sticky top-0 z-[1000] w-full bg-blue-900 text-white transition-shadow duration-300 ${
-        scrolled ? "shadow-xl shadow-blue-950/40" : "shadow-md"
-      }`}
-    >
+    <>
+      {/* sticky: sayfayla birlikte kaymaz; z-[1000]: modaller ve overlayların altında kalmaz */}
+      <header
+        className={`sticky top-0 z-[1000] w-full transition-all duration-300 ${
+          scrolled 
+            ? "bg-blue-900/95 dark:bg-[#020617]/90 backdrop-blur-md shadow-xl shadow-blue-950/40 dark:shadow-cyan-900/10 border-b border-transparent dark:border-white/5" 
+            : "bg-blue-900 dark:bg-[#020617] shadow-md dark:border-b dark:border-white/5"
+        } text-white`}
+      >
       {/* --- ANA BANT ---
           w-full max-w-7xl mx-auto px-4 → Kural 2: sabit px yok, esnek kapsayıcı
           py-3 → dikey nefes alanı                                               */}
-      <div className="w-full max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-
+      <div className="w-full max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 xl:grid-cols-12 items-center">
         {/* LOGO */}
-        <Link
-          href="/"
-          onClick={(e) => handleNav(e, "/")}
-          className="flex items-center gap-3 flex-shrink-0 transition-opacity hover:opacity-80"
-          aria-label="Üçüzler Bina Yönetimi - Ana Sayfa"
-        >
-          <Image
-            src="/binayonetimi.jpeg"
-            alt="Üçüzler Bina Yönetimi logosu"
-            width={44}
-            height={44}
-            // priority: LCP (en büyük içerikli boyama) öğesi; hızlı yükleme için
-            priority
-            className="rounded-full bg-white p-0.5 object-cover shadow-md"
-          />
-          <div className="flex flex-col leading-none">
-            {/* text-base md:text-lg → Kural 4: rem tabanlı responsive tipografi */}
-            <span className="font-black text-base md:text-lg uppercase tracking-tighter">
-              ÜÇÜZLER
-            </span>
-            <span className="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">
-              Bina Yönetimi
-            </span>
-          </div>
-        </Link>
+        <div className="col-span-1 xl:col-span-3 flex justify-start">
+          <Link
+            href="/"
+            onClick={(e) => handleNav(e, "/")}
+            className="flex items-center gap-3 flex-shrink-0 transition-opacity hover:opacity-80"
+            aria-label="Üçüzler Bina Yönetimi - Ana Sayfa"
+          >
+            <Image
+              src="/binayonetimi.jpeg"
+              alt="Üçüzler Bina Yönetimi logosu"
+              width={44}
+              height={44}
+              // priority: LCP (en büyük içerikli boyama) öğesi; hızlı yükleme için
+              priority
+              className="rounded-full bg-white p-0.5 object-cover shadow-md"
+            />
+            <div className="flex flex-col leading-none">
+              {/* text-base md:text-lg → Kural 4: rem tabanlı responsive tipografi */}
+              <span className="font-black text-base md:text-lg uppercase tracking-tighter">
+                ÜÇÜZLER
+              </span>
+              <span className="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">
+                Bina Yönetimi
+              </span>
+            </div>
+          </Link>
+        </div>
 
-        {/* DESKTOP MENÜ (lg: ve üzeri) → hidden mobilde ve tablette, flex masaüstünde */}
-        <nav className="hidden lg:flex items-center gap-4 lg:gap-8" aria-label="Ana menü">
+        {/* DESKTOP MENÜ (xl: ve üzeri) → hidden mobilde ve tablette, flex masaüstünde */}
+        <nav className="hidden xl:flex xl:col-span-6 justify-center items-center gap-4 xl:gap-8" aria-label="Ana menü">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -134,11 +147,24 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          {/* CTA butonu */}
+        </nav>
+
+        {/* SAĞ TARAF: TEMA BUTONU, CTA veya MOBİL HAMBURGER BUTONU */}
+        <div className="col-span-1 xl:col-span-3 flex justify-end items-center gap-2">
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-yellow-300 dark:text-cyan-400 border border-white/5"
+              aria-label="Temayı değiştir"
+            >
+              {theme === 'dark' ? <FaSun size={16} /> : <FaMoon size={16} />}
+            </button>
+          )}
           <Link
             href="/iletisim"
             className="
-              ml-2 px-4 lg:px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest whitespace-nowrap
+              hidden xl:inline-flex
+              ml-2 px-4 xl:px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest whitespace-nowrap
               bg-gradient-to-r from-cyan-500 to-blue-500
               hover:shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-0.5
               active:scale-95 transition-all duration-200
@@ -146,27 +172,25 @@ export default function Header() {
           >
             TEKLİF AL
           </Link>
-        </nav>
-
-        {/* MOBİL HAMBURGER BUTONU (lg altında görünür) ---
-            p-3 → Kural 2 (Erişilebilirlik): minimum 44×44px dokunmatik alan
-            aria-expanded → ekran okuyuculara menü durumunu bildirir           */}
-        <button
-          className="lg:hidden p-3 rounded-xl text-cyan-400 hover:bg-white/10 active:scale-90 transition-all"
-          onClick={() => setIsOpen(true)}
-          aria-label="Menüyü aç"
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-        >
-          <IconHamburger />
-        </button>
+          {/* p-3 → Kural 2 (Erişilebilirlik): minimum 44×44px dokunmatik alan */}
+          <button
+            className="xl:hidden p-3 rounded-xl text-cyan-400 hover:bg-white/10 active:scale-90 transition-all"
+            onClick={() => setIsOpen(true)}
+            aria-label="Menüyü aç"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+          >
+            <IconHamburger />
+          </button>
+        </div>
       </div>
+      </header>
 
       {/* === MOBİL MENÜ PANEL ===
           fixed inset-0 → ekranın tamamını kaplar
           translate-x-full → kapalıyken sağda gizli, açıkken sıfıra çekilir
           transition-transform → CSS tabanlı animasyon (Framer Motion bağımlılığı gerekmez)
-          lg:hidden → Kural 1: yalnızca mobil ve tablette var                              */}
+          xl:hidden → Kural 1: yalnızca mobil ve tablette var                              */}
       <div
         id="mobile-menu"
         role="dialog"
@@ -175,8 +199,9 @@ export default function Header() {
         className={`
           fixed inset-0 z-[2000] flex flex-col
           bg-gradient-to-br from-blue-950 via-blue-900 to-slate-900
+          dark:from-[#020617] dark:via-[#0f172a] dark:to-[#020617]
           transition-transform duration-300 ease-in-out
-          lg:hidden
+          xl:hidden
           ${isOpen ? "translate-x-0" : "translate-x-full"}
         `}
       >
@@ -272,6 +297,6 @@ export default function Header() {
           </p>
         </div>
       </div>
-    </header>
+    </>
   );
 }

@@ -39,7 +39,7 @@ const columnVariant = {
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-950 text-white pt-16 pb-8 border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-blue-950 dark:bg-[#020617] text-white pt-16 pb-8 border-t border-white/5 relative overflow-hidden transition-colors duration-300">
 
       {/* Dekoratif arka plan lekeleri */}
       <div className="pointer-events-none absolute top-0 right-0 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl -mr-36 -mt-36" aria-hidden="true" />

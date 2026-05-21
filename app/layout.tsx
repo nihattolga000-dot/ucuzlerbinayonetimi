@@ -5,8 +5,12 @@ import "./globals.css";
 import Header from "@/components/Header";
 // Footer: yeni, 3 sütunlu mobile-first footer (components/Footer.tsx)
 import Footer from "@/components/Footer";
+// ScrollToTop: sayfa yukarı kaydırma butonu
+import ScrollToTop from "@/components/ScrollToTop";
 // WhatsAppButton: sabit WhatsApp CTA butonu
 import WhatsAppButton from "@/components/Layout";
+// ThemeProvider: Dark/Light Mode sağlayıcısı
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 // --- FONT TANIMLARI ---
 // next/font/google ile font değişkenleri tanımlanır;
@@ -76,32 +80,37 @@ export default function RootLayout({
 }>) {
   return (
     // lang="tr" → ekran okuyucular ve SEO için zorunlu
-    <html lang="tr" className="scroll-smooth">
+    <html lang="tr" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`
           ${geistSans.variable} ${geistMono.variable}
           font-sans          /* CSS değişkeni üzerinden Geist Sans aktif */
           antialiased        /* macOS/iOS'ta kenar yumuşatma */
-          bg-gray-50         /* Sayfa arkaplanı; beyaz değil hafif gri → göz yorgunluğu azalır */
-          text-gray-900      /* Varsayılan metin rengi */
+          bg-gray-50         /* Light Mode arkaplan */
+          dark:bg-[#020617]  /* Dark Mode arkaplan (Derin uzay siyahı) */
+          text-gray-900      /* Light metin */
+          dark:text-gray-100 /* Dark metin */
           overflow-x-hidden  /* Mobilde yatay taşmaları önler */
+          transition-colors duration-300
         `}
       >
-        {/* Header: sticky navigasyon, hamburger menü dahil */}
-        <Header />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* Header: sticky navigasyon, hamburger menü dahil */}
+          <Header />
 
-        {/*
-          <main> etiketi: sayfa içeriğinin semantik kapsayıcısı.
-          - w-full  → her zaman tarayıcı genişliğini doldur
-          - min-h-screen → kısa sayfalarda footer alta yapışık kalır
-          İçindeki section'lar kendi max-w ve px değerlerini kendileri belirler.
-        */}
-        <main className="w-full min-h-screen">
-          {children}
-        </main>
+          <main className="w-full min-h-screen">
+            {children}
+          </main>
 
-        <Footer />
-        <WhatsAppButton />
+          <Footer />
+          <ScrollToTop />
+          <WhatsAppButton />
+        </ThemeProvider>
       </body>
     </html>
   );

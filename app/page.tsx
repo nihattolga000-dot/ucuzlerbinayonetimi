@@ -143,42 +143,41 @@ export default function Home() {
   ];
 
   return (
-    <main id="anasayfa" className="min-h-screen bg-gray-50 overflow-x-hidden relative font-sans text-gray-900 leading-relaxed">
+    <main id="anasayfa" className="min-h-screen bg-gray-50 dark:bg-[#020617] overflow-x-hidden relative font-sans text-gray-900 dark:text-gray-100 leading-relaxed transition-colors duration-300">
       <Hero />
       <About />
 
       {/* --- MİSYON & VİZYON --- */}
       <motion.section
         id="hakkimizda"
-        className="py-12 md:py-20 bg-white"
+        className="py-12 md:py-20 bg-white dark:bg-[#020617] transition-colors duration-300"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={containerVariants}
       >
         {/* w-full → mobilde tam genişlik; max-w-7xl → masaüstünde 80rem sınırı; mx-auto → yatayda ortala; px-4 → mobil kenar boşluğu */}
-        <div className="w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          <motion.div variants={sectionVariants} className="p-6 md:p-8 lg:p-12 rounded-[2rem] bg-blue-50 border-l-8 border-cyan-500 shadow-sm">
-            {/* text-2xl mobilde, md:text-3xl tablet+ → Kural 4: rem tabanlı responsive tipografi */}
-            <h2 className="text-2xl md:text-3xl font-black text-blue-900 mb-4 uppercase tracking-tighter">Misyonumuz</h2>
-            <p className="text-gray-700 italic">"Site sakinlerinin ihtiyaçlarını hızlı ve etkili şekilde karşılamak; muhasebe, temizlik ve teknik süreçleri profesyonelce yönetmek."</p>
+        <div className="w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
+          <motion.div variants={sectionVariants} className="lg:col-span-6 p-8 md:p-10 lg:p-12 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 border-l-[12px] border-l-cyan-600 dark:border-l-cyan-500 shadow-xl dark:shadow-none flex flex-col justify-center">
+            <h2 className="text-2xl md:text-3xl font-black text-blue-950 dark:text-white mb-4 uppercase tracking-tighter">Misyonumuz</h2>
+            <p className="text-gray-700 dark:text-gray-300 italic text-lg leading-relaxed">"Site sakinlerinin ihtiyaçlarını hızlı ve etkili şekilde karşılamak; muhasebe, temizlik ve teknik süreçleri profesyonelce yönetmek."</p>
           </motion.div>
-          <motion.div variants={sectionVariants} className="p-6 md:p-8 lg:p-12 rounded-[2rem] bg-blue-900 text-white border-l-8 md:border-l-0 md:border-r-8 border-blue-400 shadow-xl">
+          <motion.div variants={sectionVariants} className="lg:col-span-6 p-8 md:p-10 lg:p-12 bg-blue-950 dark:bg-cyan-900/20 text-white border-l-[12px] border-blue-500 dark:border-cyan-400 shadow-2xl dark:shadow-none flex flex-col justify-center">
             <h2 className="text-2xl md:text-3xl font-black text-cyan-400 mb-4 uppercase tracking-tighter">Vizyonumuz</h2>
-            <p className="text-blue-100">"Türkiye’de bina ve site yönetimi alanında şeffaf, güvenilir ve teknolojik çözümlerle örnek bir marka olmak."</p>
+            <p className="text-blue-100 dark:text-cyan-50 text-lg leading-relaxed">"Türkiye’de bina ve site yönetimi alanında şeffaf, güvenilir ve teknolojik çözümlerle örnek bir marka olmak."</p>
           </motion.div>
         </div>
       </motion.section>
 
       {/* --- HİZMETLER --- */}
       {/* section kapsayıcısı: w-full taşmayı önler, max-w-7xl içeriği sınırlar → Kural 2 & 3 */}
-      <section id="hizmetler" className="w-full py-16 md:py-24 text-left">
+      <section id="hizmetler" className="w-full py-16 md:py-24 text-left transition-colors duration-300">
         {/* İç div ile max-w sınırı uygulanır; section'ın arkaplan rengi tam genişlik kalır */}
         <div className="w-full max-w-7xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-blue-900 uppercase tracking-tighter">YÖNETİMDE <span className="text-cyan-600">TAM HİZMET</span> PAKETİ</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-blue-900 dark:text-white uppercase tracking-tighter">YÖNETİMDE <span className="text-cyan-600 dark:text-cyan-400">TAM HİZMET</span> PAKETİ</h2>
             {/* text-sm mobilde, md:text-lg tablet+ → Kural 4 */}
-            <p className="text-gray-500 mt-4 text-sm md:text-lg">"Siz huzurla yaşayın, biz profesyonelce yönetelim."</p>
+            <p className="text-gray-500 dark:text-gray-400 mt-4 text-sm md:text-lg">"Siz huzurla yaşayın, biz profesyonelce yönetelim."</p>
           </motion.div>
 
           <motion.div
@@ -195,25 +194,25 @@ export default function Home() {
                 variants={cardVariants}
                 whileHover="hover"
                 onClick={() => setActiveService(activeService === item.id ? null : item.id)}
-                className={`cursor-pointer p-6 md:p-8 rounded-[2.5rem] border-2 transition-all duration-500 flex flex-col ${activeService === item.id ? 'bg-blue-900 text-white border-blue-900 shadow-2xl scale-[1.02] z-10' : 'bg-white text-gray-800 border-transparent shadow-md hover:border-cyan-500'
+                className={`cursor-pointer p-6 md:p-8 border-2 transition-all duration-500 flex flex-col ${activeService === item.id ? 'bg-blue-950 dark:bg-cyan-900/30 text-white border-blue-950 dark:border-cyan-500/50 shadow-2xl scale-[1.02] z-10 rounded-sm' : 'bg-white dark:bg-white/5 text-gray-800 dark:text-gray-200 border-gray-100 dark:border-white/10 shadow-sm hover:border-cyan-600 dark:hover:border-cyan-500/50 rounded-sm hover:shadow-xl dark:shadow-none'
                   }`}
               >
-                <div className={`text-4xl mb-4 ${activeService === item.id ? 'text-cyan-400' : 'text-cyan-600'}`}>{item.icon}</div>
+                <div className={`text-4xl mb-4 ${activeService === item.id ? 'text-cyan-400' : 'text-cyan-600 dark:text-cyan-400'}`}>{item.icon}</div>
                 <h3 className="text-xl md:text-2xl font-bold mb-2 uppercase tracking-tight leading-tight">{item.title}</h3>
-                <p className={`text-sm mb-4 leading-relaxed ${activeService === item.id ? 'text-blue-100' : 'text-gray-500'}`}>{item.short}</p>
+                <p className={`text-sm mb-4 leading-relaxed ${activeService === item.id ? 'text-blue-100 dark:text-cyan-50' : 'text-gray-500 dark:text-gray-400'}`}>{item.short}</p>
                 <AnimatePresence mode="wait">
                   {activeService === item.id && (
-                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="mt-4 pt-4 border-t border-white/20">
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="mt-4 pt-4 border-t border-white/20 dark:border-white/10">
                       <ul className="space-y-3">
                         {item.details.map((detail, i) => (
-                          <motion.li initial={{ x: -10, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: i * 0.1 }} key={i} className="flex items-start gap-3 text-sm text-blue-50/90 font-medium">✓ {detail}</motion.li>
+                          <motion.li initial={{ x: -10, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: i * 0.1 }} key={i} className="flex items-start gap-3 text-sm text-blue-50/90 dark:text-gray-300 font-medium">✓ {detail}</motion.li>
                         ))}
                       </ul>
                     </motion.div>
                   )}
                 </AnimatePresence>
                 <motion.div animate={{ rotate: activeService === item.id ? 180 : 0 }} className="mt-6 flex justify-center">
-                  <FaChevronDown className={activeService === item.id ? 'text-cyan-400' : 'text-gray-300'} />
+                  <FaChevronDown className={activeService === item.id ? 'text-cyan-400' : 'text-gray-300 dark:text-gray-500'} />
                 </motion.div>
               </motion.div>
             ))}
@@ -222,27 +221,27 @@ export default function Home() {
       </section>
 
       {/* --- APSİYON YÖNETİM PANELİ & HAVUZ SİSTEMİ VURGUSU --- */}
-      <section className="py-24 bg-white overflow-hidden border-y border-gray-100 text-left">
+      <section className="py-24 bg-white dark:bg-[#020617] overflow-hidden border-y border-gray-100 dark:border-white/5 text-left transition-colors duration-300">
         <div className="w-full max-w-7xl mx-auto px-4">
-          {/* Kural 3: mobilde flex-col (alt alta), lg:flex-row (yan yana) */}
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          {/* Kural 3: flex yerine 12 sütunlu grid sistemi */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-16">
 
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:w-1/2 relative flex justify-center"
+              className="lg:col-span-5 relative flex justify-center"
             >
               <div className="relative z-10 w-full max-w-2xl group">
-                <div className="relative bg-gray-800 rounded-[1.5rem] p-3 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border-[1px] border-gray-700">
-                  <div className="relative rounded-[1rem] overflow-hidden bg-white aspect-[16/10] border-2 border-gray-900">
+                <div className="relative bg-gray-900 rounded-sm p-4 shadow-2xl border-[1px] border-gray-800 dark:border-white/10">
+                  <div className="relative rounded-sm overflow-hidden bg-white aspect-[16/10] border border-gray-700">
                     <Image
                       src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
                       alt="Apsiyon Yönetim Paneli"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-1000"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/40 dark:from-cyan-900/20 to-transparent"></div>
                   </div>
                 </div>
                 <div className="w-32 h-16 bg-gradient-to-b from-gray-700 to-gray-900 mx-auto rounded-b-3xl shadow-lg -mt-1 relative z-0"></div>
@@ -251,28 +250,28 @@ export default function Home() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-400 rounded-full blur-[140px] opacity-10"></div>
             </motion.div>
 
-            <div className="lg:w-1/2 text-left">
+            <div className="lg:col-span-7 text-left">
               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 relative bg-blue-900 rounded-xl flex items-center justify-center p-2 shadow-lg">
-                    <span className="text-white font-black text-xs uppercase">APS</span>
+                  <div className="w-12 h-12 relative bg-blue-900 dark:bg-cyan-900/30 rounded-xl flex items-center justify-center p-2 shadow-lg dark:border dark:border-cyan-500/20">
+                    <span className="text-white dark:text-cyan-400 font-black text-xs uppercase">APS</span>
                   </div>
-                  <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-sm">Dijital Yönetim Merkezi</span>
+                  <span className="text-cyan-600 dark:text-cyan-400 font-bold uppercase tracking-[0.3em] text-sm">Dijital Yönetim Merkezi</span>
                 </div>
-                <h2 className="text-3xl md:text-5xl font-black text-blue-900 uppercase tracking-tighter leading-tight mb-6">
-                  ŞEFFAF <br /><span className="text-cyan-600">BAĞIMSIZ YÖNETİM</span>
+                <h2 className="text-3xl md:text-5xl font-black text-blue-900 dark:text-white uppercase tracking-tighter leading-tight mb-6">
+                  ŞEFFAF <br /><span className="text-cyan-600 dark:text-cyan-400">BAĞIMSIZ YÖNETİM</span>
                 </h2>
 
-                <div className="bg-blue-50 border-l-4 border-blue-900 p-6 rounded-2xl mb-8 shadow-sm">
-                  <h4 className="flex items-center gap-2 text-blue-900 font-black uppercase text-sm mb-2 italic">
-                    <FaShieldAlt className="text-cyan-600" /> Kayseri'de İlk ve Tek!
+                <div className="bg-blue-50 dark:bg-cyan-950/20 border-l-4 border-blue-900 dark:border-cyan-500 p-6 rounded-2xl mb-8 shadow-sm">
+                  <h4 className="flex items-center gap-2 text-blue-900 dark:text-cyan-300 font-black uppercase text-sm mb-2 italic">
+                    <FaShieldAlt className="text-cyan-600 dark:text-cyan-400" /> Kayseri'de İlk ve Tek!
                   </h4>
-                  <p className="text-gray-700 font-bold leading-relaxed">
-                    Sektördeki "Havuz Sistemi" riskine son veriyoruz. <span className="text-blue-900 font-black underline">Havuz sistemi olmadan</span> her site için bağımsız hesap tanımlıyor, aidatlarınızı doğrudan kendi sitenizin özel hesabına yönlendiriyoruz.
+                  <p className="text-gray-700 dark:text-gray-300 font-bold leading-relaxed">
+                    Sektördeki "Havuz Sistemi" riskine son veriyoruz. <span className="text-blue-900 dark:text-cyan-400 font-black underline">Havuz sistemi olmadan</span> her site için bağımsız hesap tanımlıyor, aidatlarınızı doğrudan kendi sitenizin özel hesabına yönlendiriyoruz.
                   </p>
                 </div>
 
-                <p className="text-gray-500 text-lg mb-8 leading-relaxed font-medium">
+                <p className="text-gray-500 dark:text-gray-400 text-lg mb-8 leading-relaxed font-medium">
                   Üçüzler Bina Yönetimi, sektör lideri <strong>Apsiyon</strong> altyapısı ile her şeyi şeffafça takip etmenizi sağlar. Muhasebe raporlarından teknik arıza takibine kadar her veri parmaklarınızın ucunda.
                 </p>
 
@@ -294,13 +293,13 @@ export default function Home() {
       </section>
 
       {/* --- REFERANS VİZYONU (TİPOGRAFİK BANNER) --- */}
-      <section id="referanslar" className="py-24 md:py-32 bg-blue-900 relative overflow-hidden flex items-center justify-center min-h-[50vh]">
+      <section id="referanslar" className="py-24 md:py-32 bg-blue-900 dark:bg-[#020617] relative overflow-hidden flex items-center justify-center min-h-[50vh] transition-colors duration-300">
         {/* Arka plan süslemeleri */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500 rounded-full blur-[150px] opacity-20 -z-0 pointer-events-none mix-blend-screen"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400 rounded-full blur-[150px] opacity-20 -z-0 pointer-events-none mix-blend-screen"></div>
 
         {/* Çok ince doku (grid pattern) */}
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff15_1px,transparent_1px)] [background-size:20px_20px] opacity-30 z-0"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff15_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:20px_20px] opacity-30 z-0"></div>
 
         <div className="w-full max-w-7xl mx-auto px-4 relative z-10">
           <motion.div
@@ -331,7 +330,7 @@ export default function Home() {
       </section>
 
       {/* --- YÖNETİM SÜRECİ --- */}
-      <section className="py-24 bg-blue-900 text-white relative overflow-hidden text-left">
+      <section className="py-24 bg-blue-900 dark:bg-[#0f172a] text-white relative overflow-hidden text-left transition-colors duration-300">
         <div className="w-full max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">
@@ -354,7 +353,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2 }}
                 viewport={{ once: true }}
-                className="relative z-10 bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 text-center md:text-left"
+                className="relative z-10 bg-white/5 backdrop-blur-md p-8 md:p-10 border border-white/10 text-center md:text-left hover:bg-white/10 transition-colors duration-300"
               >
                 <div className="text-6xl font-black text-white/10 absolute -top-4 right-4">{step.step}</div>
                 <h3 className="text-xl font-black text-cyan-400 mb-4 uppercase">{step.title}</h3>
@@ -366,65 +365,65 @@ export default function Home() {
       </section>
 
       {/* --- HABERLER & DUYURULAR (DİNAMİK) --- */}
-      <section className="py-20 bg-white border-b border-gray-100 text-left">
+      <section className="py-20 bg-white dark:bg-[#020617] border-b border-gray-100 dark:border-white/5 text-left transition-colors duration-300">
         <div className="w-full max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
             <div className="text-left">
-              <h2 className="text-3xl font-black text-blue-900 uppercase tracking-tighter">GÜNCEL <span className="text-cyan-600">DUYURULAR</span></h2>
-              <p className="text-gray-500 mt-2">Üçüzler Yönetim'den son haberler ve projeler.</p>
+              <h2 className="text-3xl font-black text-blue-900 dark:text-white uppercase tracking-tighter">GÜNCEL <span className="text-cyan-600 dark:text-cyan-400">DUYURULAR</span></h2>
+              <p className="text-gray-500 dark:text-gray-400 mt-2">Üçüzler Yönetim'den son haberler ve projeler.</p>
             </div>
-            <Link href="/iletisim" className="text-blue-900 font-black uppercase text-sm tracking-widest border-b-2 border-cyan-500 pb-1 hover:text-cyan-600 transition-all">
+            <Link href="/iletisim" className="text-blue-900 dark:text-cyan-400 font-black uppercase text-sm tracking-widest border-b-2 border-cyan-500 pb-1 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all">
               Tümünü Gör →
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {duyurular.length > 0 ? duyurular.map((duyuru) => (
-              <div key={duyuru.id} className="flex gap-6 p-6 rounded-3xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-500 group border border-transparent hover:border-gray-100">
-                <div className="w-24 h-24 bg-blue-900 rounded-2xl flex-shrink-0 flex flex-col items-center justify-center text-white">
+              <div key={duyuru.id} className="flex gap-6 p-6 bg-white dark:bg-white/5 border-l-8 border-cyan-600 dark:border-cyan-500 hover:border-blue-950 dark:hover:border-white/20 shadow-md dark:shadow-none hover:shadow-2xl transition-all duration-500 group">
+                <div className="w-24 h-24 bg-blue-950 dark:bg-cyan-900/30 rounded-sm flex-shrink-0 flex flex-col items-center justify-center text-white dark:text-cyan-400 border dark:border-cyan-500/20">
                   <span className="text-2xl font-black leading-none">{new Date(duyuru.tarih).getDate()}</span>
                   <span className="text-[10px] font-bold uppercase tracking-widest mt-1">
                     {new Date(duyuru.tarih).toLocaleDateString('tr-TR', { month: 'short' })}
                   </span>
                 </div>
                 <div className="text-left">
-                  <span className="text-cyan-600 text-[10px] font-black uppercase tracking-widest">{duyuru.etiket}</span>
-                  <h4 className="text-lg font-black text-blue-900 uppercase tracking-tight mt-1 group-hover:text-cyan-600 transition-colors">{duyuru.baslik}</h4>
-                  <p className="text-gray-500 text-sm mt-2 line-clamp-2 italic">{duyuru.icerik}</p>
+                  <span className="text-cyan-600 dark:text-cyan-400 text-[10px] font-black uppercase tracking-widest">{duyuru.etiket}</span>
+                  <h4 className="text-lg font-black text-blue-900 dark:text-white uppercase tracking-tight mt-1 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{duyuru.baslik}</h4>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-2 line-clamp-2 italic">{duyuru.icerik}</p>
                 </div>
               </div>
             )) : (
-              <p className="text-gray-400 italic col-span-2 text-center">Henüz güncel bir duyuru bulunmamaktadır.</p>
+              <p className="text-gray-400 dark:text-gray-500 italic col-span-2 text-center">Henüz güncel bir duyuru bulunmamaktadır.</p>
             )}
           </div>
         </div>
       </section>
 
       {/* --- HARİTA VE İLETİŞİM --- */}
-      <section id="iletisim_bolumu" className="py-20 bg-white px-4">
+      <section id="iletisim_bolumu" className="py-20 bg-white dark:bg-[#020617] px-4 transition-colors duration-300">
         <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="w-full max-w-7xl mx-auto">
-          <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-gray-100">
-            <div className="lg:w-2/3 h-[400px] lg:h-[600px] relative grayscale hover:grayscale-0 transition-all duration-1000">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d241.65845244577216!2d35.49174568112392!3d38.725098876041415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzjCsDQzJzMwLjQiTiAzNcKwMjknMzAuNyJF!5e1!3m2!1str!2str!4v1769358296658!5m2!1str!2str" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
-              <div className="absolute top-6 left-6 bg-blue-900 text-white px-6 py-3 rounded-2xl font-bold shadow-xl">📍 Kocasinan / KAYSERİ</div>
+          <div className="bg-white dark:bg-white/5 shadow-2xl dark:shadow-none grid grid-cols-1 lg:grid-cols-12 border border-gray-200 dark:border-white/10">
+            <div className="lg:col-span-8 h-[400px] lg:h-[600px] relative grayscale hover:grayscale-0 transition-all duration-1000">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d241.65845244577216!2d35.49174568112392!3d38.725098876041415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzjCsDQzJzMwLjQiTiAzNcKwMjknMzAuNyJF!5e1!3m2!1str!2str!4v1769358296658!5m2!1str!2str" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" className="dark:opacity-80 dark:hover:opacity-100"></iframe>
+              <div className="absolute top-6 left-6 bg-blue-900 dark:bg-cyan-900/80 dark:backdrop-blur-md text-white px-6 py-3 rounded-2xl font-bold shadow-xl border border-transparent dark:border-white/10">📍 Kocasinan / KAYSERİ</div>
             </div>
-            <div className="lg:w-1/3 p-6 md:p-12 flex flex-col justify-center bg-gray-50 text-left">
+            <div className="lg:col-span-4 p-6 md:p-12 flex flex-col justify-center bg-gray-50 dark:bg-transparent text-left">
               <div className="mb-8">
-                <h3 className="text-3xl font-black text-blue-900 uppercase tracking-tighter leading-none">ÜÇÜZLER</h3>
-                <p className="text-sm text-cyan-600 font-bold uppercase tracking-widest mt-1">BİNA YÖNETİMİ</p>
+                <h3 className="text-3xl font-black text-blue-900 dark:text-white uppercase tracking-tighter leading-none">ÜÇÜZLER</h3>
+                <p className="text-sm text-cyan-600 dark:text-cyan-400 font-bold uppercase tracking-widest mt-1">BİNA YÖNETİMİ</p>
               </div>
               <div className="space-y-8 mb-10 text-left">
                 <div className="flex items-start gap-4">
-                  <FaArrowRight className="text-blue-900 mt-1 shrink-0 rotate-[-45deg]" />
-                  <p className="text-gray-600 text-sm">Sahabiye Mah. Ahmet Paşa Cad. Kalender İş Merkezi No:41 Kat:6 Kocasinan/KAYSERİ</p>
+                  <FaArrowRight className="text-blue-900 dark:text-cyan-400 mt-1 shrink-0 rotate-[-45deg]" />
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">Sahabiye Mah. Ahmet Paşa Cad. Kalender İş Merkezi No:41 Kat:6 Kocasinan/KAYSERİ</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <FaWhatsapp className="text-green-600 mt-1 shrink-0 text-xl" />
-                  <p className="text-gray-600 font-bold">+90 (553) 887 36 16</p>
+                  <FaWhatsapp className="text-green-600 dark:text-green-400 mt-1 shrink-0 text-xl" />
+                  <p className="text-gray-600 dark:text-gray-300 font-bold">+90 (553) 887 36 16</p>
                 </div>
               </div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link href="/iletisim" className="group bg-blue-900 text-white font-bold py-5 rounded-3xl shadow-xl flex items-center justify-center gap-3 uppercase tracking-widest text-sm transition-all hover:bg-blue-800">
+                <Link href="/iletisim" className="group bg-blue-900 dark:bg-cyan-600 text-white font-bold py-5 rounded-3xl shadow-xl dark:shadow-cyan-900/20 flex items-center justify-center gap-3 uppercase tracking-widest text-sm transition-all hover:bg-blue-800 dark:hover:bg-cyan-500">
                   TEKLİF ALMA FORMUNA GİT <FaArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </Link>
               </motion.div>
@@ -434,44 +433,46 @@ export default function Home() {
       </section>
 
       {/* --- SSS --- */}
-      <section id="sss" className="py-24 bg-blue-50 px-4 text-left">
-        {/* max-w-4xl SSS için daha dar bir kapsayıcı; px-4 mobil kenar boşluğu → Kural 2 */}
-        <div className="w-full max-w-4xl mx-auto px-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-blue-900 uppercase tracking-tighter">SIKÇA SORULAN <span className="text-cyan-600">SORULAR</span></h2>
-            <p className="text-gray-500 mt-4 italic font-medium">Bina yönetimi ve şeffaflık süreçlerimiz hakkında yanıtlar.</p>
-          </motion.div>
-          <div className="space-y-4">
-            {sssVerileri.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left"
-              >
-                <button
-                  onClick={() => setActiveFaq(activeFaq === index ? null : index)}
-                  className="w-full flex justify-between items-center p-6 md:p-8 text-left hover:bg-gray-50/50 transition-colors"
+      <section id="sss" className="py-24 bg-blue-50 dark:bg-[#0f172a] px-4 text-left transition-colors duration-300">
+        <div className="w-full max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-4 text-left">
+              <h2 className="text-3xl md:text-5xl font-black text-blue-900 dark:text-white uppercase tracking-tighter">SIKÇA SORULAN <span className="text-cyan-600 dark:text-cyan-400">SORULAR</span></h2>
+              <p className="text-gray-500 dark:text-gray-400 mt-4 italic font-medium leading-relaxed">Bina yönetimi ve şeffaflık süreçlerimiz hakkında aklınıza takılan soruların yanıtları.</p>
+            </motion.div>
+            
+            <div className="lg:col-span-8 space-y-4">
+              {sssVerileri.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white dark:bg-[#020617] border-l-4 border-l-cyan-600 dark:border-l-cyan-500 border-y border-r border-gray-200 dark:border-white/5 shadow-sm hover:shadow-lg dark:shadow-none transition-shadow text-left"
                 >
-                  <span className="font-bold text-blue-900 md:text-lg pr-4">{item.q}</span>
-                  <motion.div
-                    animate={{ rotate: activeFaq === index ? 180 : 0, backgroundColor: activeFaq === index ? '#0891b2' : '#f1f5f9' }}
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-xs shrink-0"
+                  <button
+                    onClick={() => setActiveFaq(activeFaq === index ? null : index)}
+                    className="w-full flex justify-between items-center p-6 md:p-8 text-left hover:bg-gray-50/50 dark:hover:bg-white/5 transition-colors"
                   >
-                    <FaChevronDown className={activeFaq === index ? 'text-white' : 'text-cyan-600'} />
-                  </motion.div>
-                </button>
-                <AnimatePresence>
-                  {activeFaq === index && (
-                    <motion.div initial="closed" animate="open" exit="closed" variants={accordionVariants} className="px-6 md:px-8 pb-8 text-gray-600 leading-relaxed font-medium">
-                      <div className="pt-4 border-t border-gray-50">{item.a}</div>
+                    <span className="font-bold text-blue-900 dark:text-gray-200 md:text-lg pr-4">{item.q}</span>
+                    <motion.div
+                      animate={{ rotate: activeFaq === index ? 180 : 0, backgroundColor: activeFaq === index ? '#0891b2' : 'transparent' }}
+                      className={`w-8 h-8 rounded-full flex items-center justify-center text-xs shrink-0 ${activeFaq !== index ? 'bg-slate-100 dark:bg-white/10' : ''}`}
+                    >
+                      <FaChevronDown className={activeFaq === index ? 'text-white' : 'text-cyan-600 dark:text-cyan-400'} />
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
+                  </button>
+                  <AnimatePresence>
+                    {activeFaq === index && (
+                      <motion.div initial="closed" animate="open" exit="closed" variants={accordionVariants} className="px-6 md:px-8 pb-8 text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
+                        <div className="pt-4 border-t border-gray-50 dark:border-white/5">{item.a}</div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
