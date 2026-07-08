@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     template: "%s | Üçüzler Bina Yönetimi",
     default: "Üçüzler Bina Yönetimi | Kayseri Profesyonel Site Yönetimi",
   },
+  icons: {
+    icon: '/logo-round.png',
+    apple: '/logo-round.png',
+  }
 };
 
 export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: { locale: string } }) {
@@ -30,7 +34,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const messages = (await import(`../../locales/${locale}/common.json`)).default;
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className="scroll-smooth">
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className="scroll-smooth" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
